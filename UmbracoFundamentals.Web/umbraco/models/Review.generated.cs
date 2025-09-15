@@ -18,14 +18,14 @@ using Umbraco.Extensions;
 
 namespace UmbracoFundamentals.Web.Models
 {
-	/// <summary>Product</summary>
-	[PublishedModel("product")]
-	public partial class Product : PublishedContentModel, IHeader
+	/// <summary>Review</summary>
+	[PublishedModel("review")]
+	public partial class Review : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		public new const string ModelTypeAlias = "product";
+		public new const string ModelTypeAlias = "review";
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
@@ -34,14 +34,14 @@ namespace UmbracoFundamentals.Web.Models
 			=> PublishedModelUtility.GetModelContentType(contentTypeCache, ModelItemType, ModelTypeAlias);
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<Product, TValue>> selector)
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(IPublishedContentTypeCache contentTypeCache, Expression<Func<Review, TValue>> selector)
 			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(contentTypeCache), selector);
 #pragma warning restore 0109
 
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public Product(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
+		public Review(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;
@@ -50,43 +50,19 @@ namespace UmbracoFundamentals.Web.Models
 		// properties
 
 		///<summary>
-		/// Preview Image
+		/// Person Name
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("previewImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops PreviewImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "previewImage");
+		[ImplementPropertyType("personName")]
+		public virtual string PersonName => this.Value<string>(_publishedValueFallback, "personName");
 
 		///<summary>
-		/// Product Grid
+		/// Quote
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("productGrid")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel ProductGrid => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockGridModel>(_publishedValueFallback, "productGrid");
-
-		///<summary>
-		/// Reviews
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("reviews")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Reviews => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "reviews");
-
-		///<summary>
-		/// Background Image
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("backgroundImage")]
-		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BackgroundImage => global::UmbracoFundamentals.Web.Models.Header.GetBackgroundImage(this, _publishedValueFallback);
-
-		///<summary>
-		/// Header Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("headerTitle")]
-		public virtual string HeaderTitle => global::UmbracoFundamentals.Web.Models.Header.GetHeaderTitle(this, _publishedValueFallback);
+		[ImplementPropertyType("quote")]
+		public virtual string Quote => this.Value<string>(_publishedValueFallback, "quote");
 	}
 }
