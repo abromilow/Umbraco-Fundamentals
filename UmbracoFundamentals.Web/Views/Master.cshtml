@@ -1,5 +1,7 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject UmbracoHelper umbracoHelper
 @{
     Layout = null;
     IPublishedContent root = Model.Root();
@@ -130,7 +132,7 @@
             <a class="navbar-brand d-flex align-items-center text-white align-self-start" href="/" target="_blank">
                 <h3 class="font-weight-bolder mb-0">
                     <span>
-                        @root.Value("companyName")
+                        @umbracoHelper.GetDictionaryValue("UmbracoFundamentals")
                     </span>
                 </h3>
             </a>
@@ -140,22 +142,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-nav-header">
                 <ul class="navbar-nav ml-auto">
-                    @foreach(var child in Model.Root().Children())
+                    @foreach (var item in Model.Root().Children())
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href="@child.Url()" target="_blank">
-                                @child.Name
-                            </a>
+                            <a class="nav-link" href="@item.Url(Model.GetCultureFromDomains())" target="_blank">@item.Name</a>
                         </li>
                     }
                     <li class="nav-item lang-dropdown clickable" onclick="langDropdown()">
+
                         <span class="nav-link">
-                            EN
+                            @Model.GetCultureFromDomains()
                         </span>
+
                         <div class="lang-dropdown-content" style="visibility:hidden" id="langDropdown">
-                            We will add more here later
+                            @foreach (var (culture, infos) in root.Cultures)
+                            {
+                                <a class="nav-link" href="@Model.Url(culture)" target="_blank">@culture</a>
+                            }
                         </div>
                     </li>
+
                 </ul>
             </div>
         </div>
