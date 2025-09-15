@@ -19,6 +19,11 @@
                 <div class="col-md-8 offset-md-2 mt-4">
                     @Model.Summary
                     <hr />
+                    @if (Model.Image != null)
+                    {
+                        var mediaCrop = Url.GetCropUrl(Model.Image, "blogHeader");
+                        <img src="@mediaCrop" alt="@Model.Image.Name">
+                    }
                     @Model.BodyText
                 </div>
                 <div class="col-md-2 mt-4 align-self-start">

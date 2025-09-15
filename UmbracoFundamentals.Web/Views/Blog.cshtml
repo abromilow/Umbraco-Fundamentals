@@ -46,7 +46,8 @@
                                         <a href="@item.Url()" target="_blank">
                                             @if (item.Image != null)
                                             {
-                                                <img src="@item.Image.Url()" alt="">
+                                                var mediaCrop = Url.GetCropUrl(item.Image, "blogThumbnail");
+                                                <img src="@mediaCrop" alt="">
                                             }
                                             else
                                             {
