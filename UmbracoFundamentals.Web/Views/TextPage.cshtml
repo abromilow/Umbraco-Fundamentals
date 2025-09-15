@@ -1,5 +1,41 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.TextPage>
+@using ContentModels = UmbracoFundamentals.Web.Models;
 @{
-	Layout = null;
+    Layout = "Master.cshtml";
 }
+<div class="jumbotron jumbotron-small jumbotron-single d-flex align-items-center">
+    <div class="container text-center">
+        <h1 class="display-2 mb-4">Text page</h1>
+    </div>
+</div>
+<section id="single-content" class="bg-white">
+    <div class="container">
+        <div class="section-content blog-content">
+            <div class="row">
+                <div class="col-md-8 offset-md-2 mt-4">
+                    Ipsum text
+                </div>
+                <div class="col-md-2 mt-4 align-self-start">
+                    <ul class="side-nav">
+                        <a href="" target="_blank">
+                        <li>Sample</li></a>
+                        <a href="" target="_blank">
+                        <li>Sample</li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-fixed overlay">
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2 class="mb-2"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
