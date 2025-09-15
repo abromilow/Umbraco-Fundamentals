@@ -4,15 +4,11 @@
 @using Umbraco.Cms.Core.PublishedCache;
 @inject ITagQuery _tagQuery;
 @{
-    Layout = "Master.cshtml";
+    Layout = "ChildPage.cshtml";
     var blogs = Model.Children<ContentModels.BlogEntry>()?.OrderByDescending(x => x.CreateDate).ToList();
     var allContentTags = _tagQuery.GetAllContentTags();
 }
-<div class="jumbotron jumbotron-small jumbotron-single d-flex align-items-center">
-    <div class="container text-center">
-        <h1 class="display-2 mb-4">@Model.Name</h1>
-    </div>
-</div>
+
 <section id="blog" class="bg-grey">
     <div class="container">
         <div class="section-content">
@@ -87,18 +83,6 @@
                     </div>
                 </div>
                 <!-- End of Blog -->
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="bg-fixed overlay">
-    <div class="container">
-        <div class="section-content">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="mb-2"></h2>
-                </div>
             </div>
         </div>
     </div>

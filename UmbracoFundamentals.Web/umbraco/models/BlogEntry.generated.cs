@@ -20,7 +20,7 @@ namespace UmbracoFundamentals.Web.Models
 {
 	/// <summary>Blog Entry</summary>
 	[PublishedModel("blogEntry")]
-	public partial class BlogEntry : PublishedContentModel
+	public partial class BlogEntry : PublishedContentModel, IHeader
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -80,5 +80,21 @@ namespace UmbracoFundamentals.Web.Models
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("summary")]
 		public virtual string Summary => this.Value<string>(_publishedValueFallback, "summary");
+
+		///<summary>
+		/// Background Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("backgroundImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BackgroundImage => global::UmbracoFundamentals.Web.Models.Header.GetBackgroundImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Header Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("headerTitle")]
+		public virtual string HeaderTitle => global::UmbracoFundamentals.Web.Models.Header.GetHeaderTitle(this, _publishedValueFallback);
 	}
 }

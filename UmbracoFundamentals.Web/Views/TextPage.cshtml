@@ -2,13 +2,8 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.TextPage>
 @using ContentModels = UmbracoFundamentals.Web.Models;
 @{
-    Layout = "Master.cshtml";
+    Layout = "ChildPage.cshtml";
 }
-<div class="jumbotron jumbotron-small jumbotron-single d-flex align-items-center">
-    <div class="container text-center">
-        <h1 class="display-2 mb-4">@Model.Name</h1>
-    </div>
-</div>
 <section id="single-content" class="bg-white">
     <div class="container">
         <div class="section-content blog-content">
@@ -33,17 +28,6 @@
                             </li>
                         }
                     </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="bg-fixed overlay">
-    <div class="container">
-        <div class="section-content">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="mb-2"></h2>
                 </div>
             </div>
         </div>
