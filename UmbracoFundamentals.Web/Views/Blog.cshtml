@@ -44,7 +44,14 @@
                                 <div class="blog-item">
                                     <div class="blog-img">
                                         <a href="@item.Url()" target="_blank">
-                                            <img src="https://placehold.co/400x250" alt="" />
+                                            @if (item.Image != null)
+                                            {
+                                                <img src="@item.Image.Url()" alt="">
+                                            }
+                                            else
+                                            {
+                                                <img src="https://placehold.co/400x250" alt="">
+                                            }
                                         </a>
                                     </div>
                                     <div class="blog-text">
