@@ -50,6 +50,38 @@ namespace UmbracoFundamentals.Web.Models
 		// properties
 
 		///<summary>
+		/// Color Settings - Accent 1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorSettingsAccent1")]
+		public virtual string ColorSettingsAccent1 => this.Value<string>(_publishedValueFallback, "colorSettingsAccent1");
+
+		///<summary>
+		/// Color Settings - Accent 2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorSettingsAccent2")]
+		public virtual string ColorSettingsAccent2 => this.Value<string>(_publishedValueFallback, "colorSettingsAccent2");
+
+		///<summary>
+		/// Color Settings - Gradient End
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorSettingsGradientEnd")]
+		public virtual string ColorSettingsGradientEnd => this.Value<string>(_publishedValueFallback, "colorSettingsGradientEnd");
+
+		///<summary>
+		/// Color Settings - Gradient Start
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("colorSettingsGradientStart")]
+		public virtual string ColorSettingsGradientStart => this.Value<string>(_publishedValueFallback, "colorSettingsGradientStart");
+
+		///<summary>
 		/// Company Address
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]

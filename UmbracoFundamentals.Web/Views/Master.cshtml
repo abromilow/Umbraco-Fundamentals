@@ -130,7 +130,7 @@
             <a class="navbar-brand d-flex align-items-center text-white align-self-start" href="/" target="_blank">
                 <h3 class="font-weight-bolder mb-0">
                     <span>
-                        Placeholder
+                        @root.Value("companyName")
                     </span>
                 </h3>
             </a>
@@ -140,11 +140,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar-nav-header">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/about-us" target="_blank">
-                            About page
-                        </a>
-                    </li>
+                    @foreach(var child in Model.Root().Children())
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="@child.Url()" target="_blank">
+                                @child.Name
+                            </a>
+                        </li>
+                    }
                     <li class="nav-item lang-dropdown clickable" onclick="langDropdown()">
                         <span class="nav-link">
                             EN
@@ -166,7 +169,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-12 d-flex align-items-center"></div>
                 <div class="col-lg-4 col-md-12 d-flex align-items-center">
-                    <p class="mx-auto text-center mb-0">Company name | Company Address | Company Phone</p>
+                    <p class="mx-auto text-center mb-0">@root.Value("companyName") | @root.Value("companyAddress") | @root.Value("companyPhone")</p>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <nav class="nav nav-mastfoot justify-content-center">

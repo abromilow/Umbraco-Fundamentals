@@ -6,7 +6,7 @@
 }
 <div class="jumbotron jumbotron-small jumbotron-single d-flex align-items-center">
     <div class="container text-center">
-        <h1 class="display-2 mb-4">Text page</h1>
+        <h1 class="display-2 mb-4">@Model.Name</h1>
     </div>
 </div>
 <section id="single-content" class="bg-white">
@@ -14,14 +14,24 @@
         <div class="section-content blog-content">
             <div class="row">
                 <div class="col-md-8 offset-md-2 mt-4">
-                    Ipsum text
+                    @Model.BodyText
                 </div>
                 <div class="col-md-2 mt-4 align-self-start">
                     <ul class="side-nav">
-                        <a href="" target="_blank">
-                        <li>Sample</li></a>
-                        <a href="" target="_blank">
-                        <li>Sample</li></a>
+                        @foreach (var child in Model.AncestorOrSelf(2).Children())
+                        {
+                            <li>
+                                @if (Model.Name == child.Name)
+                                {
+                                    <h6 class="uppercase"><a class="nav-current" href="@child.Url()" target="_blank">@child.Name</a></h6>
+                                }
+                                else
+                                {
+                                    <h6 class="uppercase"><a href="@child.Url()" target="_blank">@child.Name</a></h6>
+                                }
+
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
